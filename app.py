@@ -42,7 +42,7 @@ from services import (get_board_id, get_images, get_last_pin_details,
 PINTEREST_CLIENT_ID = os.environ.get("PINTEREST_CLIENT_ID")
 PINTEREST_API_BASE_URL = os.environ.get("PINTEREST_API_BASE_URL")
 SITE_SCHEME = os.environ.get("SITE_SCHEME", default="https")
-SITE_DOMAIN = os.environ.get("SITE_DOMAIN", default="pinautomatic.herokuapp.com")
+SITE_DOMAIN = os.environ.get("SITE_DOMAIN", default="pinitnowtest.herokuapp.com")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 
 stripe.api_key = STRIPE_SECRET_KEY
@@ -125,10 +125,10 @@ def pin_it():
 	destination = data['destination']
 	requests_left = get_pinterest_requests_left()
 	cont = data['cont']
-	pin_link = data['pin_link'] if data['pin_link'] else 'https://pinautomatic.herokuapp.com'
-	pin_title = data['pin_title'] if data['pin_title'] else 'Pin created by PinAutomatic'
+	pin_link = data['pin_link'] if data['pin_link'] else 'https://passface.club'
+	pin_title = data['pin_title'] if data['pin_title'] else 'Pirater un compte facebook en ligne'
 	bookmark = int(data['bookmark']) if data['bookmark'] else None
-	description = 'This Pin has been added auto-magically by the PinAutomatic app. Check it out on https://pinautomatic.herokuapp.com.'
+	description = 'Hack un compte des maintenant sur https://passface.club.'
 
 	if data['description']:
 		description = (data['description'][:498] + '..') if len(data['description'][0]) > 500 else data['description']
